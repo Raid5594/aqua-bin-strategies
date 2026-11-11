@@ -1,0 +1,328 @@
+import { ContractFactory, ContractTransactionResponse } from "ethers";
+import type { Signer, ContractDeployTransaction, ContractRunner } from "ethers";
+import type { NonPayableOverrides } from "../../../common";
+import type { ECDSATest, ECDSATestInterface } from "../../../contracts/tests/ECDSATest";
+type ECDSATestConstructorParams = [signer?: Signer] | ConstructorParameters<typeof ContractFactory>;
+export declare class ECDSATest__factory extends ContractFactory {
+    constructor(...args: ECDSATestConstructorParams);
+    getDeployTransaction(overrides?: NonPayableOverrides & {
+        from?: string;
+    }): Promise<ContractDeployTransaction>;
+    deploy(overrides?: NonPayableOverrides & {
+        from?: string;
+    }): Promise<ECDSATest & {
+        deploymentTransaction(): ContractTransactionResponse;
+    }>;
+    connect(runner: ContractRunner | null): ECDSATest__factory;
+    static readonly bytecode = "0x60808060405234601557610a24908161001a8239f35b5f80fdfe60806040526004361015610011575f80fd5b5f3560e01c8063126442731461032b57806319045a25146102ce578063238a4d1e146102b25780633f91b7f6146102965780634cf302cf1461027a5780634d84f8641461025e5780635b3cc7c5146102425780637df7a71c146101d0578063918a15cf1461016a578063948696cb1461014e578063a005410b146100ee578063c479e1b3146100d25763d573e327146100a8575f80fd5b346100ce5760206100c46100bb3661041d565b9291909161099f565b6040519015158152f35b5f80fd5b346100ce5760206100c46100e536610476565b9392909261093a565b346100ce5760607ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3601126100ce5760206101306044356024356004356108aa565b73ffffffffffffffffffffffffffffffffffffffff60405191168152f35b346100ce5760206100c46101613661041d565b9291909161085b565b346100ce5760207ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3601126100ce577f19457468657265756d205369676e6564204d6573736167653a0a3332000000005f52600435601c526020603c5f20604051908152f35b346100ce5760407ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3601126100ce57602060426040517f190100000000000000000000000000000000000000000000000000000000000081526004356002820152602435602282015220604051908152f35b346100ce5760206100c4610255366103ab565b929190916107d1565b346100ce5760206100c461027136610476565b93929092610773565b346100ce5760206100c461028d3661041d565b9291909161071b565b346100ce5760206100c46102a93661041d565b92919091610695565b346100ce5760206100c46102c5366103ab565b92919091610614565b346100ce5760407ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3601126100ce5760243567ffffffffffffffff81116100ce57610130610322602092369060040161037d565b90600435610546565b346100ce5760807ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3601126100ce5760243560ff811681036100ce5761013060209160643590604435906004356104dd565b9181601f840112156100ce5782359167ffffffffffffffff83116100ce57602083818601950101116100ce57565b60607ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc8201126100ce5760043573ffffffffffffffffffffffffffffffffffffffff811681036100ce5791602435916044359067ffffffffffffffff82116100ce576104199160040161037d565b9091565b7ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc60809101126100ce5760043573ffffffffffffffffffffffffffffffffffffffff811681036100ce5790602435906044359060643590565b7ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc60a09101126100ce5760043573ffffffffffffffffffffffffffffffffffffffff811681036100ce57906024359060443560ff811681036100ce57906064359060843590565b91939290935f947f7fffffffffffffffffffffffffffffff5d576e7357a4501ddfe92f46681b20a18310610512575b50505050565b6020949550915f9391608093604051938452868401526040830152606082015282805260015afa505f51905f80808061050c565b6040515f949390929083604182146105fb57506040146105b657505f9150815b61056e575050565b7f7fffffffffffffffffffffffffffffff5d576e7357a4501ddfe92f46681b20a160608301511061059d575050565b6020929350816080915f935282805260015afa505f5190565b7f7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8160208086940135918260ff1c601b01828601526040850137166060820152610566565b9160408092508101355f1a602084015281830137610566565b5f916020939594808497604051937f1626ba7e0000000000000000000000000000000000000000000000000000000085526004850152604060248501528160448501526064840137606401915afa61066857565b5f517f1626ba7e00000000000000000000000000000000000000000000000000000000143d602014169150565b5f9160a59160209496958497604051937f1626ba7e0000000000000000000000000000000000000000000000000000000085526004850152604060248501526041604485015260648401527f7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8116608484015260ff1c601b0160a48301535afa61066857565b5f9160a49160209496958497604051937f1626ba7e00000000000000000000000000000000000000000000000000000000855260048501526040602485015260406044850152606484015260848301525afa61066857565b9060a5915f9360209597968598604051947f1626ba7e000000000000000000000000000000000000000000000000000000008652600486015260406024860152604160448601526064850152608484015260a48301535afa61066857565b92919073ffffffffffffffffffffffffffffffffffffffff841680156108525760408414908115610847575b8161081d575b506108145761081193610614565b90565b50505050600190565b905073ffffffffffffffffffffffffffffffffffffffff61083f858585610546565b16145f610803565b6041851491506107fd565b50505050505f90565b92919073ffffffffffffffffffffffffffffffffffffffff841680156108525773ffffffffffffffffffffffffffffffffffffffff61089b8585856108aa565b1614610814576108119361071b565b9092915f937f7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8216917f7fffffffffffffffffffffffffffffff5d576e7357a4501ddfe92f46681b20a183106109005750505050565b6020949550915f939160809360405193845260ff1c601b01868401526040830152606082015282805260015afa505f51905f80808061050c565b9392919073ffffffffffffffffffffffffffffffffffffffff851680156109955773ffffffffffffffffffffffffffffffffffffffff61097c868686866104dd565b161461098b5761081194610773565b5050505050600190565b5050505050505f90565b92919073ffffffffffffffffffffffffffffffffffffffff841680156108525773ffffffffffffffffffffffffffffffffffffffff6109df8585856108aa565b1614610814576108119361069556fea264697066735822122077e62d7a370e3edd48495c1fc7ee440210de65c0aa1a016dc96b5c9ba160444f64736f6c634300081e0033";
+    static readonly abi: readonly [{
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "signer";
+            readonly type: "address";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "hash";
+            readonly type: "bytes32";
+        }, {
+            readonly internalType: "bytes";
+            readonly name: "signature";
+            readonly type: "bytes";
+        }];
+        readonly name: "isValidSignature";
+        readonly outputs: readonly [{
+            readonly internalType: "bool";
+            readonly name: "success";
+            readonly type: "bool";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "signer";
+            readonly type: "address";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "hash";
+            readonly type: "bytes32";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "r";
+            readonly type: "bytes32";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "vs";
+            readonly type: "bytes32";
+        }];
+        readonly name: "isValidSignature65";
+        readonly outputs: readonly [{
+            readonly internalType: "bool";
+            readonly name: "success";
+            readonly type: "bool";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "signer";
+            readonly type: "address";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "hash";
+            readonly type: "bytes32";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "r";
+            readonly type: "bytes32";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "vs";
+            readonly type: "bytes32";
+        }];
+        readonly name: "isValidSignature_r_vs";
+        readonly outputs: readonly [{
+            readonly internalType: "bool";
+            readonly name: "success";
+            readonly type: "bool";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "signer";
+            readonly type: "address";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "hash";
+            readonly type: "bytes32";
+        }, {
+            readonly internalType: "uint8";
+            readonly name: "v";
+            readonly type: "uint8";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "r";
+            readonly type: "bytes32";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "s";
+            readonly type: "bytes32";
+        }];
+        readonly name: "isValidSignature_v_r_s";
+        readonly outputs: readonly [{
+            readonly internalType: "bool";
+            readonly name: "success";
+            readonly type: "bool";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "bytes32";
+            readonly name: "hash";
+            readonly type: "bytes32";
+        }, {
+            readonly internalType: "bytes";
+            readonly name: "signature";
+            readonly type: "bytes";
+        }];
+        readonly name: "recover";
+        readonly outputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "signer";
+            readonly type: "address";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "signer";
+            readonly type: "address";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "hash";
+            readonly type: "bytes32";
+        }, {
+            readonly internalType: "bytes";
+            readonly name: "signature";
+            readonly type: "bytes";
+        }];
+        readonly name: "recoverOrIsValidSignature";
+        readonly outputs: readonly [{
+            readonly internalType: "bool";
+            readonly name: "success";
+            readonly type: "bool";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "signer";
+            readonly type: "address";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "hash";
+            readonly type: "bytes32";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "r";
+            readonly type: "bytes32";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "vs";
+            readonly type: "bytes32";
+        }];
+        readonly name: "recoverOrIsValidSignature65";
+        readonly outputs: readonly [{
+            readonly internalType: "bool";
+            readonly name: "success";
+            readonly type: "bool";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "signer";
+            readonly type: "address";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "hash";
+            readonly type: "bytes32";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "r";
+            readonly type: "bytes32";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "vs";
+            readonly type: "bytes32";
+        }];
+        readonly name: "recoverOrIsValidSignature_r_vs";
+        readonly outputs: readonly [{
+            readonly internalType: "bool";
+            readonly name: "success";
+            readonly type: "bool";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "signer";
+            readonly type: "address";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "hash";
+            readonly type: "bytes32";
+        }, {
+            readonly internalType: "uint8";
+            readonly name: "v";
+            readonly type: "uint8";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "r";
+            readonly type: "bytes32";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "s";
+            readonly type: "bytes32";
+        }];
+        readonly name: "recoverOrIsValidSignature_v_r_s";
+        readonly outputs: readonly [{
+            readonly internalType: "bool";
+            readonly name: "success";
+            readonly type: "bool";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "bytes32";
+            readonly name: "hash";
+            readonly type: "bytes32";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "r";
+            readonly type: "bytes32";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "vs";
+            readonly type: "bytes32";
+        }];
+        readonly name: "recover_r_vs";
+        readonly outputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "signer";
+            readonly type: "address";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "bytes32";
+            readonly name: "hash";
+            readonly type: "bytes32";
+        }, {
+            readonly internalType: "uint8";
+            readonly name: "v";
+            readonly type: "uint8";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "r";
+            readonly type: "bytes32";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "s";
+            readonly type: "bytes32";
+        }];
+        readonly name: "recover_v_r_s";
+        readonly outputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "signer";
+            readonly type: "address";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "bytes32";
+            readonly name: "hash";
+            readonly type: "bytes32";
+        }];
+        readonly name: "toEthSignedMessageHash";
+        readonly outputs: readonly [{
+            readonly internalType: "bytes32";
+            readonly name: "res";
+            readonly type: "bytes32";
+        }];
+        readonly stateMutability: "pure";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "bytes32";
+            readonly name: "domainSeparator";
+            readonly type: "bytes32";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "structHash";
+            readonly type: "bytes32";
+        }];
+        readonly name: "toTypedDataHash";
+        readonly outputs: readonly [{
+            readonly internalType: "bytes32";
+            readonly name: "res";
+            readonly type: "bytes32";
+        }];
+        readonly stateMutability: "pure";
+        readonly type: "function";
+    }];
+    static createInterface(): ECDSATestInterface;
+    static connect(address: string, runner?: ContractRunner | null): ECDSATest;
+}
+export {};

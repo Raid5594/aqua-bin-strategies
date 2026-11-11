@@ -1,0 +1,27 @@
+[profile.default]
+src = "contracts"
+test = "test"
+script = "script"
+libs = ["lib"]
+solc = "tools/solc-0.8.30"
+evm_version = "prague"
+optimizer = true
+optimizer_runs = 700
+via_ir = true
+auto_detect_remappings = false
+remappings = [
+  "swap-vm/=lib/swap-vm/src/",
+  "swap-vm-test/=lib/swap-vm/test/",
+  "@1inch/aqua/=lib/aqua/",
+  "@1inch/solidity-utils/=lib/solidity-utils/",
+  "@openzeppelin/contracts/=lib/openzeppelin/",
+  "forge-std/=lib/forge-std/src/"
+]
+code_size_limit = 120000
+
+[profile.default.optimizer_details]
+yul = true
+yulDetails = { stackAllocation = true, optimizerSteps = "dhfoDgvulfnTUtnIf[xa[r]EscLMcCTUtTOntnfDIulLculVcul Tpeul]jmul[jul] VcTOcul jmul : fDnTOcmu" }
+
+[fuzz]
+runs = 128

@@ -1,0 +1,13 @@
+{
+  "name": "aqua-bin-strategies",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "forge build",
+    "test": "forge test && node test/transaction-boundaries.mjs",
+    "test:solidity": "forge test",
+    "test:transactions": "node test/transaction-boundaries.mjs"
+  },
+  "devDependencies": { "ethers": "6.13.4" }
+}

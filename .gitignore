@@ -1,0 +1,9 @@
+out/
+cache/
+broadcast/
+tools/solc-*
+.env
+node_modules/
+
+# Local agent context
+/AGENTS.md

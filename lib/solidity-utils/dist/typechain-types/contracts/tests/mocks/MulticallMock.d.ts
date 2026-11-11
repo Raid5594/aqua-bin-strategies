@@ -1,0 +1,53 @@
+import type { BaseContract, BigNumberish, BytesLike, FunctionFragment, Result, Interface, ContractRunner, ContractMethod, Listener } from "ethers";
+import type { TypedContractEvent, TypedDeferredTopicFilter, TypedEventLog, TypedListener, TypedContractMethod } from "../../../common";
+export interface MulticallMockInterface extends Interface {
+    getFunction(nameOrSignature: "getValue" | "increment" | "lastSender" | "multicall" | "revertEmpty" | "revertWithMessage" | "setValue" | "value"): FunctionFragment;
+    encodeFunctionData(functionFragment: "getValue", values?: undefined): string;
+    encodeFunctionData(functionFragment: "increment", values?: undefined): string;
+    encodeFunctionData(functionFragment: "lastSender", values?: undefined): string;
+    encodeFunctionData(functionFragment: "multicall", values: [BytesLike[]]): string;
+    encodeFunctionData(functionFragment: "revertEmpty", values?: undefined): string;
+    encodeFunctionData(functionFragment: "revertWithMessage", values: [string]): string;
+    encodeFunctionData(functionFragment: "setValue", values: [BigNumberish]): string;
+    encodeFunctionData(functionFragment: "value", values?: undefined): string;
+    decodeFunctionResult(functionFragment: "getValue", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "increment", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "lastSender", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "multicall", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "revertEmpty", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "revertWithMessage", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "setValue", data: BytesLike): Result;
+    decodeFunctionResult(functionFragment: "value", data: BytesLike): Result;
+}
+export interface MulticallMock extends BaseContract {
+    connect(runner?: ContractRunner | null): MulticallMock;
+    waitForDeployment(): Promise<this>;
+    interface: MulticallMockInterface;
+    queryFilter<TCEvent extends TypedContractEvent>(event: TCEvent, fromBlockOrBlockhash?: string | number | undefined, toBlock?: string | number | undefined): Promise<Array<TypedEventLog<TCEvent>>>;
+    queryFilter<TCEvent extends TypedContractEvent>(filter: TypedDeferredTopicFilter<TCEvent>, fromBlockOrBlockhash?: string | number | undefined, toBlock?: string | number | undefined): Promise<Array<TypedEventLog<TCEvent>>>;
+    on<TCEvent extends TypedContractEvent>(event: TCEvent, listener: TypedListener<TCEvent>): Promise<this>;
+    on<TCEvent extends TypedContractEvent>(filter: TypedDeferredTopicFilter<TCEvent>, listener: TypedListener<TCEvent>): Promise<this>;
+    once<TCEvent extends TypedContractEvent>(event: TCEvent, listener: TypedListener<TCEvent>): Promise<this>;
+    once<TCEvent extends TypedContractEvent>(filter: TypedDeferredTopicFilter<TCEvent>, listener: TypedListener<TCEvent>): Promise<this>;
+    listeners<TCEvent extends TypedContractEvent>(event: TCEvent): Promise<Array<TypedListener<TCEvent>>>;
+    listeners(eventName?: string): Promise<Array<Listener>>;
+    removeAllListeners<TCEvent extends TypedContractEvent>(event?: TCEvent): Promise<this>;
+    getValue: TypedContractMethod<[], [bigint], "view">;
+    increment: TypedContractMethod<[], [void], "nonpayable">;
+    lastSender: TypedContractMethod<[], [string], "view">;
+    multicall: TypedContractMethod<[data: BytesLike[]], [void], "nonpayable">;
+    revertEmpty: TypedContractMethod<[], [void], "view">;
+    revertWithMessage: TypedContractMethod<[message: string], [void], "view">;
+    setValue: TypedContractMethod<[_value: BigNumberish], [void], "nonpayable">;
+    value: TypedContractMethod<[], [bigint], "view">;
+    getFunction<T extends ContractMethod = ContractMethod>(key: string | FunctionFragment): T;
+    getFunction(nameOrSignature: "getValue"): TypedContractMethod<[], [bigint], "view">;
+    getFunction(nameOrSignature: "increment"): TypedContractMethod<[], [void], "nonpayable">;
+    getFunction(nameOrSignature: "lastSender"): TypedContractMethod<[], [string], "view">;
+    getFunction(nameOrSignature: "multicall"): TypedContractMethod<[data: BytesLike[]], [void], "nonpayable">;
+    getFunction(nameOrSignature: "revertEmpty"): TypedContractMethod<[], [void], "view">;
+    getFunction(nameOrSignature: "revertWithMessage"): TypedContractMethod<[message: string], [void], "view">;
+    getFunction(nameOrSignature: "setValue"): TypedContractMethod<[_value: BigNumberish], [void], "nonpayable">;
+    getFunction(nameOrSignature: "value"): TypedContractMethod<[], [bigint], "view">;
+    filters: {};
+}

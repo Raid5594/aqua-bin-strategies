@@ -1,0 +1,78 @@
+import { ContractFactory, ContractTransactionResponse } from "ethers";
+import type { Signer, ContractDeployTransaction, ContractRunner } from "ethers";
+import type { NonPayableOverrides } from "../../../common";
+import type { StringUtilTest, StringUtilTestInterface } from "../../../contracts/tests/StringUtilTest";
+type StringUtilTestConstructorParams = [signer?: Signer] | ConstructorParameters<typeof ContractFactory>;
+export declare class StringUtilTest__factory extends ContractFactory {
+    constructor(...args: StringUtilTestConstructorParams);
+    getDeployTransaction(overrides?: NonPayableOverrides & {
+        from?: string;
+    }): Promise<ContractDeployTransaction>;
+    deploy(overrides?: NonPayableOverrides & {
+        from?: string;
+    }): Promise<StringUtilTest & {
+        deploymentTransaction(): ContractTransactionResponse;
+    }>;
+    connect(runner: ContractRunner | null): StringUtilTest__factory;
+    static readonly bytecode = "0x6080806040523460155761080d908161001a8239f35b5f80fdfe6080806040526004361015610012575f80fd5b5f3560e01c908163643e3983146100dd575080639c7ef06a146100c9578063bf1792b3146100755763fdf919b014610048575f80fd5b346100715761006d61006161005c3661021a565b6106af565b6040519182918261012a565b0390f35b5f80fd5b346100715760207ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3601126100715761006d6100616040516004356020820152602081526100c4604082610172565b6102a0565b346100715761006d6100616100c43661021a565b346100715760207ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3601126100715761006161006d9160043560208201526020815261005c604082610172565b7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0601f602060409481855280519182918282880152018686015e5f8582860101520116010190565b90601f7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0910116810190811067ffffffffffffffff8211176101b357604052565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52604160045260245ffd5b67ffffffffffffffff81116101b357601f017fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe01660200190565b60207ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc8201126100715760043567ffffffffffffffff8111610071578160238201121561007157806004013590610270826101e0565b9261027e6040519485610172565b8284526024838301011161007157815f92602460209301838601378301015290565b906040519180519060208260011b926002602287019460228189010160405261307882890152018652818301920101915b8282106102dd57505050565b604060209161066484516104a5817f3030303030303030303030303030303030303030303030303030303030303030908060401c907fffffffff000000000000000000000000000000000000000000000000000000006fffffffff0000000000000000000000006bffffffff000000000000000084167bffffffff00000000000000000000000000000000000000000000000084161760201c9316911617178060101c907fff00000000000000ff00000000000000ff00000000000000ff000000000000007bff00000000000000ff00000000000000ff00000000000000ff0000007aff00000000000000ff00000000000000ff00000000000000ff000084167eff00000000000000ff00000000000000ff00000000000000ff00000000000084161760081c9316911617177f0f000f000f000f000f000f000f000f000f000f000f000f000f000f000f000f007e0f000f000f000f000f000f000f000f000f000f000f000f000f000f000f000f8260081c169160041c161760077f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f7f0606060606060606060606060606060606060606060606060606060606060606830160041c1602010190565b835260801b7f3030303030303030303030303030303030303030303030303030303030303030908060401c907fffffffff000000000000000000000000000000000000000000000000000000006fffffffff0000000000000000000000006bffffffff000000000000000084167bffffffff00000000000000000000000000000000000000000000000084161760201c9316911617178060101c907fff00000000000000ff00000000000000ff00000000000000ff000000000000007bff00000000000000ff00000000000000ff00000000000000ff0000007aff00000000000000ff00000000000000ff00000000000000ff000084167eff00000000000000ff00000000000000ff00000000000000ff00000000000084161760081c9316911617177f0f000f000f000f000f000f000f000f000f000f000f000f000f000f000f000f007e0f000f000f000f000f000f000f000f000f000f000f000f000f000f000f000f8260081c169160041c161760077f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f7f0606060606060606060606060606060606060606060606060606060606060606830160041c1602010190565b83820152019101906102d1565b908151811015610682570160200190565b7f4e487b71000000000000000000000000000000000000000000000000000000005f52603260045260245ffd5b90815160011b600201916106db6106c5846101e0565b936106d36040519586610172565b8085526101e0565b7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0602085019101368237835115610682576030905382516001101561068257607860218401535f5b81518110156107d35760ff600f61073a8385610671565b5160fc1c1616906010821015610682577f30313233343536373839414243444546000000000000000000000000000000008160011b921a61077e6002840187610671565b53600f61078b8285610671565b5160f81c16916010831015610682576107cc60037f30313233343536373839414243444546000000000000000000000000000000006001951a920187610671565b5301610723565b505056fea2646970667358221220a2b2b7017f618f1bf21f020730cd87a7d0be83e39218c7a8d12d6bbe0968acb164736f6c634300081e0033";
+    static readonly abi: readonly [{
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "value";
+            readonly type: "uint256";
+        }];
+        readonly name: "toHex";
+        readonly outputs: readonly [{
+            readonly internalType: "string";
+            readonly name: "";
+            readonly type: "string";
+        }];
+        readonly stateMutability: "pure";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "bytes";
+            readonly name: "data";
+            readonly type: "bytes";
+        }];
+        readonly name: "toHexBytes";
+        readonly outputs: readonly [{
+            readonly internalType: "string";
+            readonly name: "";
+            readonly type: "string";
+        }];
+        readonly stateMutability: "pure";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "value";
+            readonly type: "uint256";
+        }];
+        readonly name: "toHexNaive";
+        readonly outputs: readonly [{
+            readonly internalType: "string";
+            readonly name: "";
+            readonly type: "string";
+        }];
+        readonly stateMutability: "pure";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "bytes";
+            readonly name: "data";
+            readonly type: "bytes";
+        }];
+        readonly name: "toHexNaiveBytes";
+        readonly outputs: readonly [{
+            readonly internalType: "string";
+            readonly name: "";
+            readonly type: "string";
+        }];
+        readonly stateMutability: "pure";
+        readonly type: "function";
+    }];
+    static createInterface(): StringUtilTestInterface;
+    static connect(address: string, runner?: ContractRunner | null): StringUtilTest;
+}
+export {};
